@@ -14,7 +14,7 @@ Node.js · yargs (command parsing) · chalk (terminal colours) · fs (JSON persi
 
 ## Project structure
 ```
-Notes-App/
+notes-app/
 ├── src/
 │   ├── app.js      # CLI entry point - defines the commands with yargs
 │   └── notes.js    # note operations: add / remove / list / read, JSON load & save
@@ -24,8 +24,8 @@ Notes-App/
 
 ## Getting started
 ```bash
-git clone https://github.com/kishorhange111/Notes-App.git
-cd Notes-App
+git clone https://github.com/kishorhange111/notes-app.git
+cd notes-app
 npm install
 ```
 
