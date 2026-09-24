@@ -1,12 +1,17 @@
 {
   "name": "notes-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Command-line note-taking app built with Node.js and yargs",
+  "main": "src/app.js",
+  "bin": {
+    "notes": "src/app.js"
   },
-  "author": "kishor",
+  "scripts": {
+    "start": "node src/app.js",
+    "help": "node src/app.js --help"
+  },
+  "keywords": ["nodejs", "cli", "yargs", "notes"],
+  "author": "Kishor Hange",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",

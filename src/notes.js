@@ -1,5 +1,9 @@
 const chalk = require("chalk");
 const fs = require("fs");
+const path = require("path");
+
+// Notes are stored as JSON in the project root, independent of the directory the command is run from.
+const NOTES_FILE = path.join(__dirname, "..", "notes.json");
 
 function addNotes(title, body) {
   const notes = loadNotes();
@@ -59,12 +63,12 @@ function readNotes(title) {
 
 function saveNotes(notes) {
   const data = JSON.stringify(notes);
-  fs.writeFileSync("notes.json", data);
+  fs.writeFileSync(NOTES_FILE, data);
 }
 
 function loadNotes() {
   try {
-    const dataBuffer = fs.readFileSync("notes.json");
+    const dataBuffer = fs.readFileSync(NOTES_FILE);
     const notes = dataBuffer.toString();
     return JSON.parse(notes);
   } catch (error) {
