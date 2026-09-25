@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+// Notes App - CLI entry point. Each command is declared with yargs and delegates to notes.js.
 const y = require("yargs");
 const notes = require("./notes.js");
 
