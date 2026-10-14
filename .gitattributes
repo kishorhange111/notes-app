@@ -1,0 +1,2 @@
+# Keep LF endings so the "#!/usr/bin/env node" shebang works on macOS/Linux.
+* text=auto eol=lf

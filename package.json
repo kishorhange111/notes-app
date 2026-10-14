@@ -8,14 +8,29 @@
   },
   "scripts": {
     "start": "node src/app.js",
-    "help": "node src/app.js --help"
+    "help": "node src/app.js --help",
+    "test": "node --test",
+    "lint": "eslint ."
   },
-  "keywords": ["nodejs", "cli", "yargs", "notes"],
+  "keywords": [
+    "nodejs",
+    "cli",
+    "yargs",
+    "notes"
+  ],
   "author": "Kishor Hange",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
     "validator": "^13.9.0",
     "yargs": "^17.7.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^15.15.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
