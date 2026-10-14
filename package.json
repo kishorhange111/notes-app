@@ -19,7 +19,7 @@
     "notes"
   ],
   "author": "Kishor Hange",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
     "validator": "^13.9.0",
