@@ -1,11 +1,22 @@
 #!/usr/bin/env node
-// Notes App - CLI entry point. Each command is declared with yargs and delegates to notes.js.
+/**
+ * @file Notes App - command line entry point.
+ *
+ * Declares the four commands (add, remove, list, read) with yargs. yargs
+ * parses `process.argv`, checks that required options such as `--title` are
+ * present, and calls the matching `handler`. Each handler only forwards the
+ * parsed options to notes.js, which does the real work.
+ *
+ * Usage: node src/app.js <command> [--title="..."] [--body="..."]
+ */
 const y = require("yargs");
 const notes = require("./notes.js");
 
+// add --title --body : create a new note.
 y.command({
   command: "add",
   describe: "Adding Notes ",
+  // builder lists the command's options; demandOption makes them required.
   builder: {
     title: {
       describe: "Title Of Notes",
@@ -23,6 +34,7 @@ y.command({
   },
 });
 
+// remove --title : delete a note.
 y.command({
   command: "remove",
   describe: "Removing Notes ",
@@ -38,6 +50,7 @@ y.command({
   },
 });
 
+// list : print every note (no options needed).
 y.command({
   command: "list",
   describe: "Listing the Notes ",
@@ -46,6 +59,7 @@ y.command({
   },
 });
 
+// read --title : print one note.
 y.command({
   command: "read",
   describe: "Reading Notes",
@@ -61,4 +75,5 @@ y.command({
   },
 });
 
+// Nothing runs until parse() reads the command line and dispatches to a handler.
 y.parse();
