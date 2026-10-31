@@ -1,5 +1,5 @@
 /**
- * @file End-to-end tests: run the real CLI (src/app.js) as a child process.
+ * @file End-to-end tests: run the real CLI (bin/notes.js) as a child process.
  */
 const { test, after } = require("node:test");
 const assert = require("node:assert/strict");
@@ -8,7 +8,7 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 
-const APP = path.join(__dirname, "..", "src", "app.js");
+const APP = path.join(__dirname, "..", "bin", "notes.js");
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "notes-cli-"));
 const env = { ...process.env, NOTES_FILE: path.join(tmpDir, "notes.json") };
 

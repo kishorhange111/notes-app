@@ -7,10 +7,10 @@
  * present, and calls the matching `handler`. Each handler only forwards the
  * parsed options to notes.js, which does the real work.
  *
- * Usage: node src/app.js <command> [--title="..."] [--body="..."]
+ * Usage: node bin/notes.js <command> [--title="..."] [--body="..."]
  */
 const y = require("yargs");
-const notes = require("./notes.js");
+const notes = require("../src/notes.js");
 
 // add --title --body : create a new note.
 y.command({
