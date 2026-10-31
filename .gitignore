@@ -1,3 +1,7 @@
 node_modules/
 # user data created by the app
 notes.json
+coverage/
+.env
+.DS_Store
+npm-debug.log*

@@ -2,15 +2,16 @@
   "name": "notes-app",
   "version": "1.0.0",
   "description": "Command-line note-taking app built with Node.js and yargs",
-  "main": "src/app.js",
+  "main": "src/notes.js",
   "bin": {
-    "notes": "src/app.js"
+    "notes": "bin/notes.js"
   },
   "scripts": {
-    "start": "node src/app.js",
-    "help": "node src/app.js --help",
+    "start": "node bin/notes.js",
+    "help": "node bin/notes.js --help",
     "test": "node --test",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check": "npm run lint && npm test"
   },
   "keywords": [
     "nodejs",
