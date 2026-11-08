@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
-    "validator": "^13.9.0",
+    "validator": "^13.15.35",
     "yargs": "^17.7.1"
   },
   "devDependencies": {
