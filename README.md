@@ -56,6 +56,16 @@ $ node bin/notes.js add --title="Shopping" --body="Again"
 Note Already Present
 ```
 
+### Install as a global `notes` command
+`package.json` registers a `notes` binary, so you can link it once and run it from anywhere:
+
+```bash
+npm link                  # run inside the project folder
+notes add --title="Shopping" --body="Milk, eggs, bread"
+notes list
+npm unlink -g notes-app   # remove the global command again
+```
+
 ## How it works
 Each command is registered with `yargs.command()` (name, description, required options, handler). Handlers call functions in `notes.js`, which read the notes array from `notes.json`, modify it, and write it back with `fs.writeFileSync`. A missing or unreadable file is treated as an empty list.
 
@@ -68,3 +78,6 @@ npm run lint   # ESLint
 npm run check  # both, exactly what CI runs
 ```
 The tests point `NOTES_FILE` at a temporary file, so your own notes are never touched. GitHub Actions runs lint and the tests on Node 18, 20 and 22 for every push.
+
+## License
+MIT. See [LICENSE](LICENSE).
